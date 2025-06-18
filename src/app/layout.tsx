@@ -18,12 +18,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  list,
+  overview,
 }: Readonly<{
   children: React.ReactNode;
+  list: React.ReactNode;
+  overview: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={`${interFont.variable} antialiased`}>{children}</body>
+      <body className={`${interFont.variable} antialiased`}>
+        <div className="max-w-[1440px] mx-auto w-full px-8 py-4 md:px-25 md:py-8 space-y-15">
+          {children}
+          {list}
+          {overview}
+        </div>
+      </body>
     </html>
   );
 }
